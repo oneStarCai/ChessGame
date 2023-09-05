@@ -60,5 +60,5 @@ func TestRedisClient_MustHGetAll(t *testing.T) {
 }
 
 func getTestClient() *RedisClient {
-	return NewRedisClient(`192.168.56.111:6379`)
+	return NewRedisClient(`192.168.56.111:6379`, ``)
 }

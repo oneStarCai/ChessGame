@@ -2,6 +2,7 @@ package ymdQuickRestart
 
 type RedisInfo struct {
 	RedisAddr string
+	RedisPasswd string //0905
 	Prefix    string
 }
 

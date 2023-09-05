@@ -10,9 +10,11 @@ type RedisClient struct {
 	client *redis.Client
 }
 
-func NewRedisClient(addr string) *RedisClient {
+func NewRedisClient(addr string, passwd string) *RedisClient {
 	client := redis.NewClient(&redis.Options{
 		Addr: addr,
+		Password : passwd,
+		DB: 0,
 	})
 	return &RedisClient{client: client}
 }

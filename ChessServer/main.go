@@ -27,6 +27,7 @@ func init() {
 		},
 	}
 	game.Flags().StringVarP(&redis.RedisAddr, `raddr`, ``, `127.0.0.1:6379`, `redis地址`)
+	game.Flags().StringVarP(&redis.RedisPasswd, `rpasswd`, ``, ``, `redis密码`)
 	game.Flags().StringVarP(&redis.Prefix, `rprefix`, ``, `chess`, `redis前缀`)
 	game.Flags().StringVarP(&mysqlSchema, `mysql_schema`, ``, `root:@tcp(127.0.0.1:3306)/chess?parseTime=true&charset=utf8`, `mysql连接`)
 	root.AddCommand(game)
@@ -41,6 +42,7 @@ func init() {
 		},
 	}
 	gate.Flags().StringVarP(&redis.RedisAddr, `raddr`, ``, `127.0.0.1:6379`, `redis地址`)
+	gate.Flags().StringVarP(&redis.RedisPasswd, `rpasswd`, ``, ``, `redis密码`)
 	gate.Flags().StringVarP(&redis.Prefix, `rprefix`, ``, `chess`, `redis前缀`)
 	gate.Flags().StringVarP(&laddr, `laddr`, ``, `127.0.0.1:8912`, `监听地址`)
 	gate.Flags().StringVarP(&wspath, `wspath`, ``, `/ChessGame`, `websocket路径`)

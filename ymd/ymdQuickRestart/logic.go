@@ -16,7 +16,7 @@ type LogicService struct {
 }
 
 func NewLogicService(req RedisInfo) *LogicService {
-	redisClient := ymdRedis.NewRedisClient(req.RedisAddr)
+	redisClient := ymdRedis.NewRedisClient(req.RedisAddr, req.RedisPasswd) //0905
 
 	msgChan := make(chan RedisExchange)
 	exitChan := make(chan struct{})

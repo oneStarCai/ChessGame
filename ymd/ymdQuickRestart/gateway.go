@@ -22,7 +22,7 @@ type gatewaySession struct {
 }
 
 func NewGatewayService(req RedisInfo) *GatewayService {
-	redisClient := ymdRedis.NewRedisClient(req.RedisAddr)
+	redisClient := ymdRedis.NewRedisClient(req.RedisAddr, req.RedisPasswd) //0905
 	this := &GatewayService{
 		req:         req,
 		redisClient: redisClient,

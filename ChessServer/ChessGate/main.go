@@ -23,6 +23,10 @@ func RunChessGate(laddr string, redis ymdQuickRestart.RedisInfo, wspath string) 
 			ReadBufferSize:    2 * 1024,
 			WriteBufferSize:   4 * 1024,
 			EnableCompression: true,
+			// 解决跨域问题
+			CheckOrigin: func(r *http.Request) bool {
+				return true
+			},
 		}
 		var conn *websocket.Conn
 		conn, err = upgrader.Upgrade(writer, request, nil)

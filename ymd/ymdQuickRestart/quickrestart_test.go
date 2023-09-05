@@ -12,11 +12,12 @@ import (
 
 var gRedisInfo = RedisInfo{
 	RedisAddr: `192.168.56.111:6379`,
+	RedisPasswd: ``, //0905
 	Prefix:    `qrtest`,
 }
 
 func TestGatewayService_NewSession(t *testing.T) {
-	client := ymdRedis.NewRedisClient(gRedisInfo.RedisAddr)
+	client := ymdRedis.NewRedisClient(gRedisInfo.RedisAddr, gRedisInfo.RedisPasswd) //0905
 	client.MustFlushAll()
 
 	gate := NewGatewayService(gRedisInfo)
